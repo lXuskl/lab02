@@ -8,5 +8,6 @@ int main(int argc, char** argv)
     std::cin >> name; // Запрашиваем значение переменной name из потока ввода вывода
     std::cout << "Hello world from " << name << std::endl; // Выводим приветствие
     return 0;
+
 }
 
