@@ -1,3 +1,5 @@
+## Рыкунов И. В.
+
 ## Laboratory work II
 
 Данная лабораторная работа посвещена изучению систем контроля версий на примере **Git**.
@@ -445,4 +447,72 @@ $ git branch -d patch1
 Ветка patch1 удалена (была d94ea28).
 ```
 ___
+### Part III
 
+**Note:** *Работать продолжайте с теми же репоззиториями, что и в первой части задания.*
+***1.** Создайте новую локальную ветку `patch2`.*
+
+```bash
+$ git checkout -b patch2
+$ git checkout patch2
+$ git clone https://github.com/lXuskl/lab02.git -b master
+```
+
+***2.** Измените *code style* с помощью утилиты [**clang-format**](http://clang.llvm.org/docs/ClangFormat.html). Например, используя опцию `-style=Mozilla`.*
+
+```bash
+$ clang-format -style=Mozilla -i ./sources/hello_world.cpp
+```
+
+***3.** **commit**, **push**, создайте pull-request `patch2 -> master`.*
+
+```bash
+$ git status
+$ git add examples
+$ git commit -m"Created examples"
+$ git add include
+$ git commit -m"Created include"
+$ git add sources
+$ git commit -m"Created sources"
+$ git push origin patch2
+```
+
+***4.** В ветке **master** в удаленном репозитории измените комментарии, например, расставьте знаки препинания, переведите комментарии на другой язык.*
+
+
+***5.** Убедитесь, что в pull-request появились *конфликтны*.*
+
+***6.** Для этого локально выполните **pull** + **rebase** (точную последовательность команд, следует узнать самостоятельно). **Исправьте конфликты**.*
+
+```bash
+$ git checkout master
+$ git pull origin master
+$ git checkout patch2
+```
+
+```bash
+$ git add sources/hello_world.cpp
+$ git rebase master
+$ git rebase --continue
+```
+
+***7.** Сделайте *force push* в ветку `patch2`*
+
+```bash
+$ git push -f origin patch2
+```
+
+Вывод программы:
+
+<details>
+Username for 'https://github.com': lXuskl
+Password for 'https://lXuskl@github.com': 
+Everything up-to-date
+</details>
+
+***8.** Убедитель, что в pull-request пропали конфликтны.*
+
+
+***9.** Вмержите pull-request `patch2 -> master`.*
+ 
+    
