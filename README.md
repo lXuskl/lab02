@@ -510,9 +510,9 @@ Password for 'https://lXuskl@github.com':
 Everything up-to-date
 </details>
 
-***8.** Убедитель, что в pull-request пропали конфликтны.*
+***8.** Убедитесь, что в pull-request пропали конфликтны.*
 
 
-***9.** Вмержите pull-request `patch2 -> master`.*
+***9.** Выполните pull-request `patch2 -> master`.*
  
     
